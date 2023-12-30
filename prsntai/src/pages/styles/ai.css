@@ -1,0 +1,47 @@
+button {
+    padding: 10px;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-right: 10px;
+    font-size: 15px;
+    font-weight: bold;
+    transition: 0.1s;
+}
+
+#startButton {
+    background-color: green;
+}
+
+#startButton:hover {
+    background-color: #90EE90;
+}
+
+#startButton:active {
+    transform: scale(0.95);
+}
+
+#stopButton {
+    background-color: red;
+}
+
+#stopButton:hover {
+    background-color: pink;
+}
+
+#stopButton:active {
+    transform: scale(0.95);
+}
+
+#newButton {
+    background-color: blue;
+}
+
+#newButton:hover {
+    background-color: #87CEFA;
+}
+
+#newButton:active {
+    transform: scale(0.95);
+}
