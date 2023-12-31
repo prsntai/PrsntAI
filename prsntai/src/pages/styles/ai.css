@@ -45,3 +45,36 @@ button {
 #newButton:active {
     transform: scale(0.95);
 }
+
+.split {
+    display: flex;
+    justify-content: space-between;
+    width: calc(100% - 20px);
+}
+
+.settings {
+    margin: 0;
+}
+
+.presentation {
+    border: 1px solid #ccc;
+    width: calc(100% - 215px);
+    min-height: calc(100vh - 170px);
+}
+
+.transcript {
+    font-size: 15px;
+}
+
+@media (max-width: 650px) {
+    .split {
+        flex-direction: column;
+    }
+  
+    .presentation {
+        margin-top: 20px;
+        width: 100%;
+        min-height: calc(100vh - 280px);
+    }
+  }
+  
