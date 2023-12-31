@@ -34,15 +34,15 @@ button {
     transform: scale(0.95);
 }
 
-#newButton {
+#resetButton {
     background-color: blue;
 }
 
-#newButton:hover {
+#resetButton:hover {
     background-color: #87CEFA;
 }
 
-#newButton:active {
+#resetButton:active {
     transform: scale(0.95);
 }
 
@@ -54,16 +54,53 @@ button {
 
 .settings {
     margin: 0;
+    padding: 0;
 }
 
 .presentation {
     border: 1px solid #ccc;
-    width: calc(100% - 215px);
+    width: calc(100% - 110px);
     min-height: calc(100vh - 170px);
+    overflow: hidden;
+    position: relative;
 }
 
 .transcript {
     font-size: 15px;
+    color: white;
+    background-color: black;
+    padding: 5px;
+    opacity: 0.8;
+    bottom: 0;
+    position: absolute;
+}
+
+h2 {
+    text-align: center;
+    font-weight: bold;
+}
+
+.slide {
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
+
+img {
+    width: 80%;
+    height: auto;
+    max-width: 500px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #ccc;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#summary {
+    margin-top: 15px;
+    width: calc(100% - 30px);
 }
 
 @media (max-width: 650px) {
@@ -74,7 +111,12 @@ button {
     .presentation {
         margin-top: 20px;
         width: 100%;
-        min-height: calc(100vh - 280px);
+        min-height: calc(100vh - 315px);
+    }
+
+    #summary {
+        width: 100%;
+        width: calc(100% - 7px);
     }
   }
   
