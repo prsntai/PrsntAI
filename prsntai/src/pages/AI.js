@@ -23,7 +23,7 @@ let slide = [
     <li>Cats spend 70% of their lives sleeping.</li>
     <li>In 1963 a cat went to space.</li>
   </ul>,
-  <img key="4" src="https://img.freepik.com/free-photo/cute-domestic-kitten-sits-window-staring-outside-generative-ai_188544-12519.jpg" alt="A cat"></img>,
+  <img key="4" className="aiImg" src="https://img.freepik.com/free-photo/cute-domestic-kitten-sits-window-staring-outside-generative-ai_188544-12519.jpg" alt="A cat"></img>,
 ];
 
 const gptPrompt = async (text) => {
@@ -77,7 +77,7 @@ const format_slide = (text) => {
     else if (line.slice(0, 7) === "image: ") {
       const description = line.slice(7);
       const image_url = dallePrompt(description);
-      return <img key={idx} src={image_url} alt={description}></img>;
+      return <img key={idx} className="aiImg" src={image_url} alt={description}></img>;
     }
     else {
       return <p key={idx}>{line}</p>;
@@ -128,7 +128,7 @@ const AI = () => {
             <a href="/" className="nav-element">Home</a>
             <a href="/ai" className="nav-element">AI Tool</a>
             <a href="/docs" className="nav-element">Docs</a>
-            <a href="https://github.com/orgs/prsntai/repositories" target="_blank" rel="noreferrer" className="nav-right">GitHub</a>
+            <a href="https://github.com/prsntai" target="_blank" rel="noreferrer" className="nav-right">GitHub</a>
         </div>
         <h1>AI Tool</h1>
         <div className="split">
@@ -157,7 +157,7 @@ const AI = () => {
           </div>
         </div>
       </div>
-      <footer><p>&copy; 2023 Prsnt AI</p></footer>    
+      <footer><p>&copy; 2023 Koral Kulacoglu</p></footer>    
     </div>
   );
 };
