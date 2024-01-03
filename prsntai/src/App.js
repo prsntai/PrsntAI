@@ -3,6 +3,7 @@ import {BrowserRouter as Router, Routes, Route, Navigate} from "react-router-dom
 import Home from './pages/Home';
 import Docs from './pages/Docs';
 import AI from './pages/AI';
+import { SpeedInsights } from "@vercel/speed-insights/react"
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Route path="*" element={<Navigate to="/"/>} />
         </Routes>
       </Router>
+      <SpeedInsights />
     </>
     );
 }
