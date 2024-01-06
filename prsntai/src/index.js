@@ -6,7 +6,7 @@ import App from './App';
 import { inject } from '@vercel/analytics';
 import { SpeedInsights } from "@vercel/speed-insights/react"
 
-inject(); // web analytics
+inject(); // analytics
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
