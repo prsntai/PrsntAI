@@ -4,6 +4,7 @@ import './index.css';
 import reportWebVitals from './reportWebVitals';
 import App from './App';
 import { inject } from '@vercel/analytics';
+import { SpeedInsights } from "@vercel/speed-insights/react"
 
 inject(); // web analytics
 
@@ -11,6 +12,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <App />
+    <SpeedInsights />
   </React.StrictMode>
 );
 

@@ -1,19 +1,38 @@
 import React from 'react';
 import './styles/style.css';
+import './styles/background.css';
 
 const Docs = () => {
     return (
         <div>
+            <div class="area" >
+                <ul class="circles">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </div>
             <div className="body">
-                <div className="nav">
-                    <a href="/" className="nav-element">Home</a>
+            <div className="nav">
+                    <a href="/"><img src="https://i.ibb.co/wJD0wwv/Prsnt-AILogo-No-BG.png" className="nav-logo" alt="logo"/></a>
+                    <a href="/" className="nav-element">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        Home
+                    </a>
                     <a href="/ai" className="nav-element">AI Tool</a>
                     <a href="/docs" className="nav-element">Docs</a>
                     <a href="https://github.com/orgs/prsntai/repositories" target="_blank" rel="noreferrer" className="nav-right">GitHub</a>
                 </div>
-                <h1>Documentation</h1>
+                <h1 className="regular-title">Docs</h1>
 
-                <h2>What is Prsnt AI?</h2>
+                <h2>What is PrsntAI?</h2>
                 <p>A web application that uses AI to generate presentation slides live using the presenter's speech.</p>
 
                 <h2>How does it work?</h2>
@@ -34,7 +53,7 @@ const Docs = () => {
                     <li>Reset: reset/switch the slide.</li>
                 </ul>
             </div>
-            <footer><p>&copy; 2023 Koral Kulacoglu</p></footer>    
+            <footer><p>&copy; 2023 PrsntAI</p></footer>    
         </div>
     );
 };

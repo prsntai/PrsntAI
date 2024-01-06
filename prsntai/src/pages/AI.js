@@ -32,7 +32,7 @@ const gptPrompt = async (text) => {
     messages: text,
     max_tokens: 500,
   });
-  
+
   return gptResponse.choices[0].message.content;
 }
 
@@ -95,7 +95,10 @@ const AI = () => {
 
   useEffect(() => {
     const interval = setInterval(async () => {
-      if (!sendPrompt) return;
+      if (!sendPrompt) {
+        console.log("Not sending prompt");
+        return;
+      }
 
       let curPrompt = prompt;
       if (summary !== "") {
@@ -105,10 +108,12 @@ const AI = () => {
       curPrompt = prompt.concat([{ role: "user", content: transcript }]);
 
       if (JSON.stringify(curPrompt) === JSON.stringify(prevPrompt)) {
+        console.log("Not sending prompt (same text as before)");
         return;
       }
   
       try {
+        console.log("Sending prompt");
         const slide_raw = await gptPrompt(curPrompt);
         slide = format_slide(slide_raw);
         prevPrompt = curPrompt;
@@ -123,14 +128,32 @@ const AI = () => {
 
   return (
     <div>
+        <div class="area" >
+            <ul class="circles">
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
       <div className="body">
         <div className="nav">
-            <a href="/" className="nav-element">Home</a>
+            <a href="/"><img src="https://i.ibb.co/wJD0wwv/Prsnt-AILogo-No-BG.png" className="nav-logo" alt="logo"/></a>
+            <a href="/" className="nav-element">
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                Home
+            </a>
             <a href="/ai" className="nav-element">AI Tool</a>
             <a href="/docs" className="nav-element">Docs</a>
             <a href="https://github.com/prsntai" target="_blank" rel="noreferrer" className="nav-right">GitHub</a>
         </div>
-        <h1>AI Tool</h1>
+        <h1 className="regular-title">AI Tool</h1>
         <div className="split">
           <div className="settings">
             <p>Microphone: {listening ? 'On' : 'Off'}</p>
@@ -140,7 +163,8 @@ const AI = () => {
             }}>Start</button>
 
             <button id="stopButton" onClick={() => {
-              SpeechRecognition.stopListening(); sendPrompt=false;
+              SpeechRecognition.stopListening();
+              sendPrompt = false;
             }}>Stop</button>
 
             <button id="resetButton" onClick={() => {
@@ -149,7 +173,6 @@ const AI = () => {
 
             <input id = "summary" type="text" placeholder="1-2 sentence summary of presentation" maxLength="100" onChange={(e)=> summary = e.target.value}
             />
-            <p>NOTE: DALL-E image generation can be enabled locally (it's a bit expensive 😂).</p>
           </div>
           <div className="presentation">
             <div className="slide">{slide}</div>
@@ -157,7 +180,7 @@ const AI = () => {
           </div>
         </div>
       </div>
-      <footer><p>&copy; 2023 Koral Kulacoglu</p></footer>    
+      <footer><p>&copy; 2023 PrsntAI</p></footer>    
     </div>
   );
 };

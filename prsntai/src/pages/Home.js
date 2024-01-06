@@ -1,44 +1,51 @@
 import React from 'react';
+import Typewriter from 'typewriter-effect';
 import './styles/style.css';
+import './styles/background.css';
 
 const Home = () => {
     return (
         <div>
+            <div class="area" >
+                <ul class="circles">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </div>
             <div className="body">
                 <div className="nav">
-                    <a href="/" className="nav-element">Home</a>
+                    <a href="/"><img src="https://i.ibb.co/wJD0wwv/Prsnt-AILogo-No-BG.png" className="nav-logo" alt="logo"/></a>
+                    <a href="/" className="nav-element">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        Home
+                    </a>
                     <a href="/ai" className="nav-element">AI Tool</a>
                     <a href="/docs" className="nav-element">Docs</a>
                     <a href="https://github.com/prsntai" target="_blank" rel="noreferrer" className="nav-right">GitHub</a>
                 </div>
-                <h1>Prsnt AI</h1>
-                <div className="splitHome">
-                    <div className="description">
-                        <b>Transforming speech into presentation slides live using AI</b>
-                        <br/>
-                        <br/>
-                        <p>In just 3 simple steps, you can give a speech, accompanied by real-time slideshows with our <a href="/ai">AI Tool</a>.</p>
-
-                        <div className="step-tracker">
-                            <div className="step">
-                                <div className="step-circle">1</div>
-                                <div className="step-label">Write Summary</div>
-                            </div>
-                            <div className="step">
-                                <div className="step-circle">2</div>
-                                <div className="step-label">Enable Mic</div>
-                            </div>
-                            <div className="step">
-                                <div className="step-circle">3</div>
-                                <div className="step-label">Start Speaking</div>
-                            </div>
-                        </div>
-
-                    </div>
-                    <img className="demoImg" src="https://i.ibb.co/Qk350xP/kitty.png" alt="Demo"/>
+                <img className="title-logo" src="https://i.ibb.co/rMpr4fS/prsnt-AILinked-In.jpg" alt="PrsntAI Logo"/>
+                <h1>PrsntAI</h1>
+                <div class="typewriter">
+                    <Typewriter 
+                        options={{
+                        strings: ['Create real-time slideshows with your voice', "Powered by ChatGPT & DALL-E"],
+                        autoStart: true,
+                        loop: true,
+                        delay: 50,
+                        deleteSpeed: 25,
+                    }}/>
                 </div>
+                <a href="/ai" className="try-button">Try it out!</a>
             </div>
-            <footer><p>&copy; 2023 Koral Kulacoglu</p></footer>    
+            <footer><p>&copy; 2023 PrsntAI</p></footer>
         </div>
     );
 };
